@@ -231,9 +231,9 @@ export function HomePage() {
                     ))}
                   </div>
                 </div>
-                <a href={p.href} className={styles.projectLink} target="_blank" rel="noreferrer">
+                <Link to={p.href} className={styles.projectLink} >
                   {p.linkText} <Icon name={p.linkIcon} size={18} />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
