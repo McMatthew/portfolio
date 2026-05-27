@@ -1,0 +1,223 @@
+/* ── Header ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 64px;
+  background-color: #08151e;
+  border-bottom: 2px solid #232325;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 48px;
+  }
+}
+
+.logo {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d7e4f2;
+  white-space: nowrap;
+}
+
+/* ── Desktop nav ── */
+.nav {
+  display: none;
+  gap: 32px;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d7e4f2;
+  text-decoration: none;
+  padding: 4px 8px;
+  transition: background 0.15s;
+}
+
+.navLink:hover {
+  background: #14212b;
+}
+
+.navLinkActive {
+  color: #339af0;
+  border-bottom: 2px solid #339af0;
+  padding-bottom: 4px;
+}
+
+/* ── Header actions ── */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btnDownload {
+  display: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #339af0;
+  color: white;
+  border: 2px solid #232325;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+@media (min-width: 768px) {
+  .btnDownload {
+    display: block;
+  }
+}
+
+/* ── Terminal icon button — mobile only ── */
+.icon {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  user-select: none;
+}
+
+.terminalBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #ffb693;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .terminalBtn {
+    display: none;
+  }
+}
+
+/* ── Mobile drawer overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: #000;
+  border-left: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.drawerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.drawerTitle {
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #444;
+  letter-spacing: 0.12em;
+}
+
+.drawerClose {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+.drawerClose:hover {
+  color: #fff;
+}
+
+/* ── Drawer nav links ── */
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  gap: 4px;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #c0c0c0;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid #111;
+  transition: color 0.15s;
+}
+
+.drawerLink:hover {
+  color: #fff;
+}
+
+.drawerLink:last-child {
+  border-bottom: none;
+}
+
+.drawerLinkActive {
+  color: #339af0;
+}
+
+.prompt {
+  color: #339af0;
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+}

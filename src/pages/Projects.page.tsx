@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Projects.module.css';
 import cvPdf from '../assets/matteo_bianchi_cv.pdf';
+import { Header } from '../components/Header/Header';
 
 function Icon({ name, size = 24 }: { name: string; size?: number }) {
   return (
@@ -13,22 +14,7 @@ function Icon({ name, size = 24 }: { name: string; size?: number }) {
 export function ProjectsPage() {
   return (
     <div className={styles.root}>
-      {/* ── Header ── */}
-      <header className={styles.header}>
-        <div className={styles.logo}>Matteo Bianchi</div>
-        <nav className={styles.nav}>
-          <Link to="/" className={styles.navLink}>HOME</Link>
-          <span className={`${styles.navLink} ${styles.navLinkActive}`}>PROJECTS</span>
-          <Link to="/skills" className={styles.navLink}>SKILLS</Link>
-          <Link to="/contact" className={styles.navLink}>CONTACT</Link>
-        </nav>
-        <div className={styles.headerActions}>
-          <a href={cvPdf} download="matteo_bianchi_cv.pdf" className={styles.btnDownload}>DOWNLOAD_CV</a>
-          <span className={`${styles.icon} ${styles.terminalIcon}`} style={{ fontSize: 24 }}>
-            terminal
-          </span>
-        </div>
-      </header>
+      <Header />
 
       {/* ── Main ── */}
       <main className={`${styles.main} ${styles.gridBg}`}>
