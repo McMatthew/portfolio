@@ -1,0 +1,722 @@
+/* ── Root ── */
+.root {
+  background-color: #08151e;
+  color: #d7e4f2;
+  font-family: 'Barlow Condensed', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.gridBg {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(209, 205, 204, 0.35) 1px, transparent 1px);
+}
+
+/* ── Material Symbols icon helper ── */
+.icon {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  user-select: none;
+}
+
+/* ── Header ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  height: 64px;
+  background-color: #08151e;
+  border-bottom: 2px solid #232325;
+}
+
+.logo {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d7e4f2;
+  white-space: nowrap;
+}
+
+.nav {
+  display: none;
+  gap: 32px;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d7e4f2;
+  text-decoration: none;
+  padding: 4px 8px;
+  transition: background 0.15s;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.navLink:hover {
+  background: #14212b;
+}
+
+.navLinkActive {
+  color: #339af0;
+  border-bottom: 2px solid #339af0;
+  padding-bottom: 4px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btnDownload {
+  display: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #339af0;
+  color: white;
+  border: 2px solid #232325;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+@media (min-width: 768px) {
+  .btnDownload {
+    display: block;
+  }
+}
+
+.btnDownload:active {
+  transform: translateY(1px);
+}
+
+.terminalIcon {
+  color: #ffb693;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ── Main ── */
+.main {
+  padding-top: 64px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px 80px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 48px 16px 64px;
+  }
+}
+
+/* ── Hero ── */
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 64px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 8fr 4fr;
+  }
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroBadge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #339af0;
+  display: block;
+}
+
+.heroTitle {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #d7e4f2;
+  margin: 0;
+}
+
+.heroDesc {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #e2bfb0;
+  max-width: 640px;
+  margin: 0;
+}
+
+.heroRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* ── System Status Card (industrial) ── */
+.statusCard {
+  background: #fcf9f8;
+  border: 2px solid #232325;
+  position: relative;
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.statusCard::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #232325;
+  z-index: -1;
+}
+
+.statusCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.statusCardLabel {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #232325;
+}
+
+.statusOnline {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #40c057;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.statusMetrics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statusMetricRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #232325;
+}
+
+.statusMetricRowMt {
+  margin-top: 8px;
+}
+
+.statusMetricValue {
+  color: #232325;
+}
+
+.statusBar {
+  height: 4px;
+  background: #2a3641;
+  width: 100%;
+}
+
+.statusBarFill {
+  height: 100%;
+  background: #232325;
+}
+
+/* ── Bento Grid ── */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .bentoGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .colSpan7 {
+    grid-column: span 7;
+  }
+
+  .colSpan5 {
+    grid-column: span 5;
+  }
+
+  .colSpan6 {
+    grid-column: span 6;
+  }
+}
+
+/* ── White Cards ── */
+.whiteCard {
+  background: white;
+  border: 2px solid #232325;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  color: #232325;
+}
+
+.cardSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #339af0;
+}
+
+.cardSectionTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #232325;
+  margin: 0;
+}
+
+.cardCategoryLabel {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a4136;
+  margin: 0 0 32px;
+}
+
+.cardBody {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #232325;
+  margin: 0 0 16px;
+}
+
+.textBlue {
+  color: #339af0;
+}
+
+.quoteBlock {
+  border-top: 1px solid #d1cdcc;
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.quote {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-style: italic;
+  color: #5a4136;
+  opacity: 0.7;
+  margin: 0 0 8px;
+}
+
+.quoteAuthor {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #232325;
+  font-style: normal;
+  display: block;
+}
+
+/* ── Documents ── */
+.docStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.docCard {
+  background: #14212b;
+  border: 2px solid #232325;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.docCardDark {
+  background: #14212b;
+}
+
+.docIndex {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d7e4f2;
+  opacity: 0.2;
+}
+
+.docCardTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d7e4f2;
+  margin: 0 0 8px;
+}
+
+.docCardDesc {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #e2bfb0;
+  margin: 0 0 24px;
+  flex: 1;
+}
+
+.docBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border: none;
+}
+
+.docBtn:active {
+  transform: translateY(2px);
+}
+
+.docBtnFilled {
+  background: #232325;
+  color: white;
+  border: none;
+}
+
+.docBtnFilled:hover {
+  background: #339af0;
+}
+
+.docBtnOutline {
+  background: transparent;
+  color: #d7e4f2;
+  border: 2px solid #d7e4f2;
+}
+
+.docBtnOutline:hover {
+  background: #d7e4f2;
+  color: #232325;
+}
+
+/* ── Hard Skills ── */
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.skillName {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #232325;
+}
+
+.skillPct {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #339af0;
+}
+
+/* Stepped progress bar — taller cells matching the design */
+.steppedBar {
+  display: flex;
+  gap: 4px;
+}
+
+.steppedBarCell {
+  width: 12px;
+  height: 24px;
+  background: #e5e2e1;
+  border: 1px solid #d1cdcc;
+  flex-shrink: 0;
+}
+
+.steppedBarCellActive {
+  width: 12px;
+  height: 24px;
+  background: #339af0;
+  border: 1px solid #00497b;
+  box-shadow: 0 0 8px rgba(51, 154, 240, 0.4);
+  flex-shrink: 0;
+}
+
+/* ── Soft Skills ── */
+.softSkillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.softSkillCard {
+  padding: 16px;
+  border: 1px solid #d1cdcc;
+  background: #101d27;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.softSkillCardFull {
+  grid-column: 1 / -1;
+}
+
+.softSkillName {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d7e4f2;
+  opacity: 0.6;
+  display: block;
+}
+
+.softSkillPct {
+  font-family: 'Newsreader', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #e5e2e1;
+  line-height: 1.1;
+}
+
+.softSkillBar {
+  height: 4px;
+  background: #2a3641;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.softSkillBarFill {
+  height: 100%;
+  background: #339af0;
+}
+
+/* ── CTA Banner ── */
+.ctaBanner {
+  margin-top: 24px;
+  background: #232325;
+  border: 2px solid #232325;
+  position: relative;
+  color: white;
+}
+
+.ctaBanner::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #232325;
+  z-index: -1;
+}
+
+.ctaInner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .ctaInner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.ctaTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #339af0;
+  margin: 0 0 4px;
+}
+
+.ctaDesc {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.ctaBtn {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 12px 32px;
+  background: #2e3b45;
+  color: #232325;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  border: none;
+  cursor: pointer;
+  color: #d7e4f2;
+}
+
+.ctaBtn:hover {
+  background: #339af0;
+  color: white;
+}
+
+/* ── Footer ── */
+.footer {
+  width: 100%;
+  padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  background: #232325;
+  border-top: 2px solid #232325;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+.footerCopy {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #2e3b45;
+  text-transform: uppercase;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 32px;
+}
+
+.footerLink {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #2a3641;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+
+.footerLink:hover {
+  color: #ff6b00;
+}
